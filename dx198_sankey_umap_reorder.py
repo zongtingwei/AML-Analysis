@@ -5,8 +5,8 @@ dx198_sankey_umap_reorder.py
 
 功能：
 - 读取表达矩阵 (--expr) 与 Dx198.v2.xlsx (--dx, 至少含 Biaoben, SubtypeMerge，若含 NR/CR/Response 会自动统计 CR/NR 比例)
-- 读取你已有的分组文件 (--groups)；若未提供，则在 UMAP 空间用 KMeans 做聚类（--k 指定 K）
-- **将你点名的簇（--pin G3,G4,G6,G7）重命名并排到最前**：G3→G1, G4→G2, G6→G3, G7→G4；其余簇保持相对顺序，依次接到 G5...
+- 读取已有的分组文件 (--groups)；若未提供，则在 UMAP 空间用 KMeans 做聚类（--k 指定 K）
+- 将点名的簇（--pin G3,G4,G6,G7）重命名并排到最前：G3→G1, G4→G2, G6→G3, G7→G4；其余簇保持相对顺序，依次接到 G5...
 - Sankey 底部 SubtypeMerge 的顺序也靠前放置：依次取这些优先簇的“主导 Subtype”并去重加到最前，剩余 subtype 按总体频数
 - 输出：Sankey 图、UMAP 图（图例含 n 与 CR/NR 比例）、各种表格、marker/module 热图等
 
