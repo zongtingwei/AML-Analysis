@@ -395,3 +395,21 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+
+
+python module_heatmap_and_ranksum.py \
+  --expr ./out_concat/Dx198_concat_tumor_only.csv \
+  --dx ./Dx198.v2.xlsx \
+  --module-score ./ALL.maglinant.module.score.forML.xlsx \
+  --outdir ./out_tumoronly_K7_modules_allinone \
+  --method MAD --top 700 \
+  --pca-dims 20 \
+  --umap-n 20 --umap-min-dist 0.1 --umap-metric cosine \
+  --k 7 --seed 2025 \
+  --missing-sentinel -6.0 \
+  --min-subtype-size 3 \
+  --ct-families 'HSC,MPP,LMPP,GMP.Cycle,GMP.Mono,GMP.Neut,Early_GMP' \
+  --cm-metric euclidean --cm-method average
+
